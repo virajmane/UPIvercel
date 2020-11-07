@@ -5,7 +5,7 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
       data = request.form["upiid"]
-      return render_template("index.html", upi=data)
+      return redirect(f"/{data}")
     else:
       return render_template("upi.html")
 
